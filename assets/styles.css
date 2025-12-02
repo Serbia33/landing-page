@@ -1,0 +1,143 @@
+/* Reset for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #5b5fc7;
+  --text: #242424;
+  --muted: #555;
+  --bg: #fff;
+}
+
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.header {
+  background: #fff;
+  padding: 12px 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  animation: fadeIn 0.8s ease-out;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  height: 40px;
+}
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  min-height: 300px;
+}
+.hero-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.95);
+  padding: 24px 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  max-width: 90%;
+  animation: fadeIn 1s ease-out;
+}
+.hero-overlay h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero-overlay p {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeIn 1.2s ease-out;
+}
+.card h3 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.card p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  margin-top: auto;
+  font-size: 0.9rem;
+  font-weight: 300;
+  animation: fadeIn 1.4s ease-out;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-overlay {
+    width: 95%;
+    padding: 16px;
+  }
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+  }
+  .card {
+    margin: 16px;
+    padding: 20px;
+  }
+}
